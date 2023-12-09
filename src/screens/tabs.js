@@ -35,16 +35,12 @@ const TabOptions = {
 
 const Tabs = () => {
 
-  const checkIconColor = (focused) => {
-    return focused ? colors.primary : "#000";
-  };
-
   return (
     <Tab.Navigator
         screenOptions={{ lazy: false }}
         backBehavior="history"
         initialRouteName="Home"
-        sceneContainerStyle={{ paddingBottom: 70 }}
+        sceneContainerStyle={{ paddingBottom: heights.bottomtabnavigation }}
       >
         
         <Tab.Screen
