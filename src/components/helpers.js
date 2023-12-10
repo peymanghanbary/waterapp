@@ -81,328 +81,8 @@ export const productCategoriesIcon = (exeption = false) => {
   return array;
 };
 
-export const productCategories = (value, exeption = false) => {
-  let array = [
-    { id: 0, title: "همه" },
-    { id: 1, title: "کالای دیجیتال" },
-    { id: 2, title: "موبایل" },
-    { id: 3, title: "خودرو، ابزار و تجهیزات صنعتی" },
-    { id: 4, title: "مد و پوشاک" },
-    { id: 5, title: "اسباب بازی، کودک و نوزاد" },
-    { id: 6, title: "کالاهای سوپرمارکتی" },
-    { id: 7, title: "زیبایی و سلامت" },
-    { id: 8, title: "خانه و آشپزخانه" },
-    { id: 9, title: "کتاب، لوازم تحریر و هنر" },
-    { id: 10, title: "ورزش و سفر" },
-    { id: 11, title: "محصولات بومی و محلی" },
-    // 'املاک (ویلا و کلبه و آپارتمان)',
-  ];
-  if (exeption) {
-    array = array.filter((item) => item.id != 0);
-  }
-  //console.log('array',array);
-  if (!is_null(value) || value == 0) {
-    const found = array.find((item) => item.id == value);
-    if (is_null(found)) {
-      return "همه";
-    }
-    return found.title;
-  }
-  return array;
-};
-
-export const factorStatus = (value) => {
-  switch (parseInt(value)) {
-    case 1:
-      return "در انتظار پرداخت";
-    case 2:
-      return "قابل استفاده";
-    case 3:
-      return "استفاده شده";
-    case 4:
-      return "لغو شده";
-    case 13:
-      return "منقضی شده";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const factorStatusColorScheme = (value) => {
-  switch (parseInt(value)) {
-    case 1:
-      return "#ffedd5";
-    case 2:
-      return "#ffedd5";
-    case 3:
-      return "#cffafe";
-    case 4:
-      return "#d1fae5";
-    case 5:
-      return "#fef9c3";
-    case 11:
-      return "light";
-    case 12:
-      return "#e11d48";
-    case 13:
-      return "light";
-    default:
-      return "light";
-  }
-};
-
-export const factorStatusColor = (value) => {
-  switch (parseInt(value)) {
-    case 1:
-      return "#ea580c";
-    case 2:
-      return "warning.200";
-    case 3:
-      return "green.200";
-    case 4:
-      return "red.200";
-    case 13:
-      return "rose.200";
-    default:
-      return "light.200";
-  }
-};
-
-export const paymentStatus = (value) => {
-  switch (parseInt(value)) {
-    case 0:
-      return "پرداخت نشده";
-    case 1:
-      return "پرداخت موفق";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const publicStatus = (value) => {
-  switch (value) {
-    case "confirmed":
-      return "موفق";
-    case "pending":
-      return "در حال انجام";
-    case "rejected":
-      return "انجام نشده";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const publicStatusColor = (value) => {
-  switch (value) {
-    case "confirmed":
-      return "green.500";
-    case "pending":
-      return "warning.400";
-    case "rejected":
-      return "danger.500";
-    default:
-      return "light.200";
-  }
-};
-
-export const paymentStatusColor = (value) => {
-  switch (value) {
-    case 0:
-      return "warning.400";
-    case 1:
-      return "green.500";
-    default:
-      return "light.200";
-  }
-};
-
-export const transactionStatus = (value) => {
-  switch (value) {
-    case 1:
-      return "پرداخت ناموفق";
-    case 2:
-      return "پرداخت موفق";
-    case 11:
-      return "پرداخت ناموفق";
-    case 13:
-      return "منقضی شده";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const factorStatusArray = (value) => {
-  return [
-    // {'id':'1','title':'در انتظار پرداخت','iconModule':MaterialCommunityIcons,'iconName':'progress-clock'},
-    {
-      id: "2",
-      title: "در حال پردازش",
-      iconModule: MaterialCommunityIcons,
-      iconName: "progress-clock",
-    },
-    {
-      id: "3",
-      title: "بررسی انبار",
-      iconModule: AntDesign,
-      iconName: "database",
-    },
-    {
-      id: "4",
-      title: "ارسال شد",
-      iconModule: MaterialCommunityIcons,
-      iconName: "truck-fast-outline",
-    },
-    {
-      id: "5",
-      title: "تحویل شد",
-      iconModule: Feather,
-      iconName: "check-square",
-    },
-    // {'id':'11','title':'پرداخت ناموفق','iconModule':FontAwesome5,'iconName':'times-circle'},
-    {
-      id: "12",
-      title: "لغو فاکتور",
-      iconModule: FontAwesome5,
-      iconName: "times-circle",
-    },
-    // {'id':'13','title':'ابطال فاکتور','iconModule':FontAwesome5,'iconName':'times-circle'},
-  ];
-};
-
-export const transactionStatusColor = (value) => {
-  switch (value) {
-    case 1:
-      return "rose.400";
-    case 2:
-      return "success.400";
-    case 11:
-      return "rose.400";
-    default:
-      return "light.400";
-  }
-};
-
-export const factorStatusPercentage = (value) => {
-  switch (value) {
-    case 1:
-      return 12;
-    case 2:
-      return 25;
-    case 3:
-      return 50;
-    case 4:
-      return 75;
-    case 5:
-      return 100;
-    case 11:
-      return 100;
-    case 12:
-      return 100;
-    case 13:
-      return 100;
-    default:
-      return 90;
-  }
-};
 export const avatar = () => {
   return "https://sedarholding.com/includes/asset/img/avatar.png";
-};
-
-export const factorStatusBgColor = (value) => {
-  switch (value) {
-    case 1:
-      return "warning.50";
-    case 2:
-      return "warning.50";
-    case 3:
-      return "primary.50";
-    case 4:
-      return "green.50";
-    case 5:
-      return "tertiary.50";
-    case 12:
-      return "danger.50";
-    default:
-      return "light.50";
-  }
-};
-export const factorProgressColor = (value) => {
-  switch (value) {
-    case 1:
-      return "warning";
-    case 2:
-      return "warning";
-    case 3:
-      return "primary";
-    case 4:
-      return "green";
-    case 5:
-      return "tertiary";
-    case 12:
-      return "danger";
-    default:
-      return "light";
-  }
-};
-
-export const productStatusColor = (value) => {
-  switch (value) {
-    case "pending":
-      return "#f97316";
-    case "rejected":
-      return "#dc2626";
-    case "expired":
-      return "#dc2626";
-    case "confirmed":
-      return "#22c55e";
-    default:
-      return "white";
-  }
-};
-
-export const productStatusText = (value) => {
-  switch (value) {
-    case "pending":
-      return "در انتظار تایید";
-    case "rejected":
-      return "رد شده";
-    case "expired":
-      return "منقضی شده";
-    case "confirmed":
-      return "تایید شده";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const productStatus = (value) => {
-  switch (value) {
-    case "confirmed":
-      return "تایید شده";
-    case "expired":
-      return "منقضی شده";
-    case "rejected":
-      return "رد شده";
-    case "pending":
-      return "در انتظار تایید";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const productType = (value) => {
-  switch (value) {
-    case "sefr":
-      return "نو";
-    case "dastedo":
-      return "دست دوم";
-    case "ejare":
-      return "اجاره";
-    case "forosh":
-      return "فروش";
-    default:
-      return "نامشخص";
-  }
 };
 
 export const banks = (value) => {
@@ -458,19 +138,6 @@ export const paymentMethod = (value) => {
       return "درگاه بانک پاسارگاد";
     case "GATEWAY":
       return "پرداخت آنلاین";
-    default:
-      return "نامشخص";
-  }
-};
-
-export const deliveryTypeTitle = (value) => {
-  switch (value) {
-    case "F2F":
-      return "تحویل حضوری";
-    case "POST":
-      return "شرکت ملی پست";
-    case "PEYK":
-      return "پیک موتوری";
     default:
       return "نامشخص";
   }
@@ -732,25 +399,6 @@ export const ToastAlert = ({
   );
 };
 
-export const sortArray = (value = null) => {
-  const arr = [
-    { id: "cheapest", title: "ارزانـتــریــن" },
-    { id: "costliest", title: "گـرانـتـریــن" },
-    { id: "newest", title: "جـدیـدتـریـن" },
-    { id: "oldest", title: "قـدیمی تـرین" },
-  ];
-
-  if (!is_null(value)) {
-    const res = arr.find((obj) => obj.id == value);
-    if (is_null(res)) {
-      return "همه";
-    }
-    return res.title;
-  }
-
-  return arr;
-};
-
 export const array = (length) => {
   return Array.from({ length }, (v, i) => i);
 };
@@ -813,21 +461,6 @@ export const hasStore = (user) => {
   return user.isStore == 1;
 };
 
-export const HandlePrice = (price) => {
-  return (
-    <HStack space={1} flexDirection="row-reverse">
-      <Text fontFamily={fonts.BOLD} fontSize={14} color="dark.200">
-        {price > 0 ? number_format(price) : "رایگان"}
-      </Text>
-      {price > 0 && (
-        <Text fontSize={13} color="dark.200">
-          تومان
-        </Text>
-      )}
-    </HStack>
-  );
-};
-
 export const calcTotal = (factors) => {
   let total = 0;
 
@@ -855,22 +488,6 @@ export const calcPayable = (factors) => {
   });
 
   return total;
-};
-
-export const handleStatusTitle = (item) => {
-  if (item.length > 1) {
-    return "چند فاکتور";
-  } else {
-    return factorStatus(item[0].status);
-  }
-};
-
-export const handleStatusColor = (item) => {
-  if (item.length > 1) {
-    return "primary.600";
-  } else {
-    return factorStatusColor(item[0].status);
-  }
 };
 
 export const setNewTimeStamp = (data) => {
@@ -1147,22 +764,6 @@ export const validate_image_uri = (uri) => {
   }
 };
 
-export const inboxSortArray = () => {
-  return [
-    { id: "id%7Cdesc", title: "جـدیـدتـریـن" },
-    { id: "id%7Casc", title: "قـدیمی تـرین" },
-  ];
-};
-
-export const inboxTypeArray = () => {
-  return [
-    { id: "", title: "همه" },
-    { id: "admin", title: "ادمین" },
-    { id: "seller", title: "فروشنده" },
-    { id: "user", title: "کاربر" },
-  ];
-};
-
 export const sortArrayTitle = (value) => {
   const sortArrayObject = sortArray().find((item) => item.id == value);
   return sortArrayObject.title;
@@ -1259,31 +860,6 @@ export const GetData = async (key) => {
   } catch (e) {
     console.log(e);
   }
-};
-
-export const productSortArray = () => {
-  return [
-    {
-      id: 1,
-      title: "ارزانترین",
-      value: 1,
-    },
-    {
-      id: 2,
-      title: "بیشترین تخفیف",
-      value: 2,
-    },
-    {
-      id: 3,
-      title: "جدیدترین",
-      value: 3,
-    },
-    {
-      id: 4,
-      title: "احراز هویت شده",
-      value: 4,
-    },
-  ];
 };
 
 export const getBrandsAndCategories = (

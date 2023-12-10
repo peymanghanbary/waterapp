@@ -23,6 +23,7 @@ const Load = function () {
     irsm: require("../fonts/irsm.ttf"),
     irsu: require("../fonts/irsu.ttf"),
     irsbl: require("../fonts/irsbl.ttf"),
+    irsme: require("../fonts/irsmE.ttf"),
   });
 
   return (

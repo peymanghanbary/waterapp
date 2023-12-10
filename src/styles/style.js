@@ -33,6 +33,7 @@ export const fonts = {
   EN: "irse",
   REGULARE: "irs",
   MEDIUM: "irsm",
+  MEDIUM_EN: "irsme",
   LIGHT: "irsl",
   BOLDLIGHT: "irsbl",
   ULTRA: "irsu",
